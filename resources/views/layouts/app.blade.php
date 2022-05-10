@@ -15,11 +15,13 @@
         <header>
             <div class="h-16 bg-gradient-to-tr from-sky-500 to-sky-600 shadow-lg">
                 <div class="container flex justify-center items-center font-raleway font-semibold pt-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute left-2 md:left-10 lg:left-10" fill="white" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                    </svg>
-                    <a href="" class="text-white text-xl">Prihlásenie</a>
-                    <a href="" class="text-white text-xl mx-5">Registrácia</a>
+                    <a href="/" class="absolute left-2 md:left-10 lg:left-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="white" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                        </svg>
+                    </a>
+                    <a href="{{ route('login') }}" class="text-white text-xl">Prihlásenie</a>
+                    <a href="{{ route('register') }}" class="text-white text-xl mx-5">Registrácia</a>
                 </div>
             </div>
         </header>
