@@ -18,6 +18,7 @@ class CreateNotesTable extends Migration
 
             $table->string('title');
             $table->text('content');
+            $table->string('slug')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
