@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Online poznámkový blok')
 @section('content')
     <div>
         <div class="flex justify-center">
