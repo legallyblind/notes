@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreNoteRequest;
 use App\Http\Resources\NoteResource;
 use App\Models\Note;
 use Illuminate\Http\Request;
@@ -43,18 +44,9 @@ class NoteController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|void
      */
-    public function store(Request $request) {
-      $data = $request->except('_token');
+    public function store(StoreNoteRequest $request) {
+      $data = $request->validated()->except('_token');
       $data['slug'] = Str::uuid();
-
-      //allow only alphanumeric data ((with spaces))
-      $validator = Validator::make($data, [
-        'title'   => 'required|regex:/^[a-zA-Z0-9_-]*$/|max:32',
-        'content' => 'required|regex:/[a-zA-Z0-9\s]+/|max:2048'
-      ]);
-      if($validator->fails()) {
-        return back()->withErrors($validator->errors())->withInput();
-      }
 
       $note = Note::create($data);
 
